@@ -1,0 +1,28 @@
+{
+  "name": "lazy-load-wrapper",
+  "version": "0.0.1",
+  "main": "dist/lazy-scroll-wrapper.umd.js",
+  "module": "dist/lazy-scroll-wrapper.esm.js",
+  "unpkg": "dist/lazy-scroll-wrapper.min.js",
+  "browser": {
+    "./sfc": "src/LazyScrollWrapper.vue"
+  },
+  "description": "Wrapper for components lazy loading",
+  "repository": "https://github.com/outOFFspace/vue-lazy-scroll-wrapper",
+  "author": "howard <vovchuck.bogdan@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn run build:umd & yarn run build:es & yarn run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/lazy-scroll-wrapper.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/lazy-scroll-wrapper.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/lazy-scroll-wrapper.min.js"
+  },
+  "devDependencies": {
+    "intersection-observer": "^0.5.0",
+    "rollup": "^0.57.1",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-vue": "^3.0.0",
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.16"
+  }
+}
